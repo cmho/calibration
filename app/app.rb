@@ -1,10 +1,16 @@
+require 'erb'
+
 class Calibration < Padrino::Application
   use ActiveRecord::ConnectionAdapters::ConnectionManagement
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
 
+  layout :layout
+
   enable :sessions
+  enable :authentication
+  set    :login_page, '/login'
 
   ##
   # Caching support
@@ -45,6 +51,62 @@ class Calibration < Padrino::Application
   #     disable :asset_stamp # no asset timestamping for dev
   #   end
   #
+
+  get '/' do
+    erb :choose_type
+  end
+
+  get '/register' do
+    "put a registration form somewhere here"
+  end
+
+  post '/register' do
+    #registration processing
+  end
+
+  get '/login' do
+
+  end
+
+  post '/login' do
+
+  end
+
+  get '/characters' do
+    redirect '/characters/list'
+  end
+
+  get '/characters/list' do
+    # list characters
+  end
+
+  get '/characters/:id' do
+    # show character
+  end
+
+  get '/characters/new' do
+
+  end
+
+  post '/characters/new' do
+
+  end
+
+  post '/characters/new/publish' do
+
+  end
+
+  get '/characters/edit/:id' do
+    # edit character
+  end
+
+  post '/characters/edit/:id' do
+    # process character changes
+  end
+
+  get '/characters/print/:id' do
+    # print-friendly sheet
+  end
 
   ##
   # You can manage errors like:

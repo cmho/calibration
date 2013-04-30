@@ -17,8 +17,6 @@ GEM
     builder (3.0.4)
     daemons (1.1.9)
     eventmachine (1.0.0)
-    haml (4.0.2)
-      tilt
     http_router (0.10.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -87,7 +85,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   bcrypt-ruby
-  haml
   padrino (= 0.10.7)
   rake
   sinatra-flash
